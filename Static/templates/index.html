@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Catalina Jobs</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Job Search</h1>
+      <p><a class="btn btn-primary btn-lg" href="../../scrape" role="button">Find a Job!</a></p>
+    </div>
+
+    <!-- Phone Listings -->
+    <div class="row" id="jobs">
+      <div class="col-md-12">
+        <h4 class="heading">{{jobs.Job_Title}} {{jobs.Company_Name}}</h4>
+        <small>{{jobs.Job_Location}}{{jobs.Job_Pay}}</small>
+        <small>{{jobs.Job_Type}}</small>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
+

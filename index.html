@@ -10,6 +10,9 @@
   <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  <style>
+    #map {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
+  </style>
   <title>Catalina Jobs</title>
 </head>
 
@@ -129,6 +132,24 @@
             <img src="./img/img-1.png" alt="img">
           </div>
         </div>
+        <div id="map"></div>
+        <script>
+        const map = L.map('map').setView([51.505, -0.09, 13]);
+        
+        const attribution =
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+        
+        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const api_url =  
+        const tiles = L.tileLayer(tileUrl, { attribution });
+        tiles.addTo(map);
+        
+        
+        
+        
+        
+        
+        </script>
         </div>
       </div>
     </div>

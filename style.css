@@ -353,6 +353,10 @@ p {
 #projects .project-item:hover .project-img img {
 	transform: scale(1.1);
 }
+
+#map {
+	height:180px;
+}
 /* End Projects section */
 
 
@@ -502,14 +506,17 @@ margin-top: 50px;
 	padding-top: 50px;
 	padding-bottom: 10px;
 }
-#footer h2 {
+#footer h1 {
 	color: white;
 	font-weight: 500;
 	font-size: 1.8rem;
+	font-weight: bold;
+	text-align: center;
 	letter-spacing: 0.1rem;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
 
 /* End Footer */
 

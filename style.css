@@ -18,6 +18,11 @@ a {
 	font-size: large;
 	font-weight: bold;
 }
+
+h1 {
+	text-align: center;
+	font-size: large;
+}
 h2 {
 	text-align: center;
 	font-size: large;
@@ -25,7 +30,9 @@ h2 {
 
 h3 {
 	text-align: center;
-	font-size: medium;
+	font-style: italic;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 30px;
 }
 .container {
 	min-height: 100vh;
@@ -35,8 +42,8 @@ h3 {
 	justify-content: center;
 }
 img {
-	height: 50%;
-	width: 50%;
+	height: 100%;
+	width: 100%;
 	object-fit: cover;
 }
 
@@ -278,27 +285,41 @@ p {
 	padding: 10px 20px;
 	font-size: 2rem;
 }
+#about .about {
+	flex-direction: row;
+}
+#about .col-left {
+	width: 600px;
+	height: 400px;
+	padding-left: 60px;
+}
+#about .col-right {
+	text-align: left;
+	padding: 30px;
+}
+#about .col-right h1 {
+	text-align: left;
+}
 
+#about .service-bottom .service-item {
+	flex-basis: 45%;
+	margin: 2.5%;
+}
 /* End About Section */
 
 /* Map/ Data Section Below */
-/* Projects section */
-#projects .projects {
+/* Map section */
+#maps .display {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 100px 0;
+	padding: 40px 0;
 }
-#projects .projects-header h1 {
+#maps .display-header h1 {
 	margin-bottom: 50px;
 }
-#projects .all-projects {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-}
-#projects .project-item {
+
+#maps .display-header {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -308,56 +329,33 @@ p {
 	overflow: hidden;
 	border-radius: 10px;
 }
-#projects .project-info {
-	padding: 30px;
-	flex-basis: 50%;
-	height: 100%;
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
-	flex-direction: column;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-	color: white;
-}
-#projects .project-info h1 {
-	font-size: 4rem;
-	font-weight: 500;
-}
-#projects .project-info h2 {
-	font-size: 1.8rem;
-	font-weight: 500;
-	margin-top: 10px;
-}
-#projects .project-info p {
-	color: white;
-}
-#projects .project-img {
-	flex-basis: 50%;
-	height: 300px;
-	overflow: hidden;
-	position: relative;
-}
-#projects .project-img:after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-	opacity: 0.7;
-}
-#projects .project-img img {
-	transition: 0.3s ease transform;
-}
-#projects .project-item:hover .project-img img {
-	transform: scale(1.1);
+
+#map-container {
+    position: relative;
+    height: 500px;
+    width: 1000px;
 }
 
 #map {
-	height:180px;
+    position: relative;
+    height: inherit;
+    width: inherit;
 }
-/* End Projects section */
+.information-container{
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	width: 50px;
+	height: 100px;
+	align-items: center;
+	justify-content: space-between;
+}
+.box-1{
+	flex: 0 0 50%;
+	max-width: 100%;
+}
+
+/* End Maps section */
 
 
 
@@ -570,28 +568,31 @@ margin-top: 50px;
 	
 	/* End Project */
 
-	/* About */
-	#about .about {
-		flex-direction: row;
-	}
-	#about .col-left {
-		width: 600px;
-		height: 400px;
-		padding-left: 60px;
-	}
-	#about .col-right {
-		text-align: left;
-		padding: 30px;
-	}
-	#about .col-right h1 {
-		text-align: left;
-	}
+	/* Collaborators */
+	*{
+		margin: 0;
+		padding: 0;
+	  }
+	  
+	  #collaborators {
+		display: flex;
+		justify-content: space-around;
+	  }
+	  
+	  #left {
+		border: 1px solid lightgray;
+		width: 40%;
+		position: center;
+	  }
 
-	#about .service-bottom .service-item {
-		flex-basis: 45%;
-		margin: 2.5%;
-	}
-	/* End About */
+	  
+	  #right {
+		border: 1px solid lightgray;
+		width: 60%;
+		position: center;
+	  }
+	  
+	/* End Collaborators */
 
 
 /* End Media Query For Tablet */

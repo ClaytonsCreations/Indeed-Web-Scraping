@@ -10,9 +10,6 @@
   <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-  <style>
-    #map {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
-  </style>
   <title>Catalina Jobs</title>
 </head>
 
@@ -47,7 +44,7 @@
     <div class="hero container">
       <div>
         <h1>Indeed Job Query set in Catalina Island, California</h1>
-        <a href="#projects" type="button" class="cta">Click to see more!</a>
+        <a href="#maps" type="button" class="cta">Click to see more!</a>
       </div>
     </div>
   </section>
@@ -106,52 +103,41 @@
   <!-- End About Section -->
 
    <!-- Data/ Project Section -->
-   <section id="projects">
-    <div class="projects container">
-      <div class="projects-header">
-        <h1 class="section-title">CATALINA ISLAND<span>GEOGRAPHY</span></h1>
-      </div>
-      <div class="all-projects">
-        <div class="project-item">
-          <div class="project-info">
-            <h1></h1>
-            <h2>MAP/h2>
-            <p>MAP INFO??? TO BE EDITED</p>
-          </div>
-          <div class="project-img">
-            <img src="./img/img-1.png" alt="img">
-          </div>
+   <section id="maps">
+    <div><div class="display">
+      <div class="display-header">
+        <h1 class="section-title">CATALINA ISLAND GEOGRAPHY</h1>
+        <div id="map-container">
+          <div id="map"></div>
+              <script>
+              var myMap = L.map("map", {
+                  center: [33.39, -118.42],
+                  zoom: 11
+                });
+      
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(myMap);  
+      
+                var markers = L.markerClusterGroup()
+      
+                d3.csv("/Mapping_Leaflet/Indeed_coordinates.csv", function(data) {
+                  var lat = data.lat
+                  var lng = data.lng
+                  markers.addLayer(L.marker([lat, lng]).bindPopup("Job Title: " + data.jobtitle + "Company: " + data.company +  "Job Summary: " + data.jobsummary));
+      
+                  myMap.addLayer(markers);
+       
+      }); 
+              </script>
+              </div>
+            <div class="information-container"></div>
+              <h1 class="section-title"> Analysis</h1>
+              <p>Based on the data that we found, there were several cities on Catalina Island that had a high number of job opportunities.</p>
+              <p><a href="htmlJobTable.html">Return to Job Table!</a></p>
+            </div>
+        </div>  
         </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Analysis</h1>
-            <h2>Conclusion</h2>
-            <p>Input what the map will show us.</p>
-          </div>
-          <div class="project-img">
-            <img src="./img/img-1.png" alt="img">
-          </div>
-        </div>
-        <div id="map"></div>
-        <script>
-        const map = L.map('map').setView([51.505, -0.09, 13]);
-        
-        const attribution =
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-        
-        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-        const api_url =  
-        const tiles = L.tileLayer(tileUrl, { attribution });
-        tiles.addTo(map);
-        
-        
-        
-        
-        
-        
-        </script>
-        </div>
-      </div>
     </div>
   </section>
   <!-- End Projects Section -->
@@ -159,22 +145,21 @@
 
   <!-- Collaborators Section -->
   <section id="Collaborators">
-    <div class="about container">
-      <div class="col-left">
-        <div class="about-img">
+    <div id="collaborators">
+      <div id="left">
+        <div class="left-img">
           <img src="https://onix-systems.com/uploads/pGYiNHHhKM2vYjaxskSgT05kajmIFTsN.jpg" alt="img">
         </div>
       </div>
-      <div class="col-right">
-        <h1 class="section-title">Team<span>Members</span></h1>
-        <h2>Project 3</h2>
-        <h3>Mark Clayton, Estefany Amado, Jenny Bui</h3>
+      <div id="right">
+      <h1>Project 3</h1>
+      <h2>Team Members</h2>
+      <h3>Mark Clayton, Estefany Amado, Jenny Bui</h3>
       </div>
-    </div>
+  </div>
   </section>
   <!-- End Collaborators Section -->
-
-
+  
 
   <!-- Footer -->
   <section id="footer">

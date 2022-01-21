@@ -338,8 +338,8 @@ p {
 
 #map {
     position: relative;
-    height: inherit;
-    width: inherit;
+    height: 400px;
+    width: 600px;
 }
 .information-container{
 	display: flex;

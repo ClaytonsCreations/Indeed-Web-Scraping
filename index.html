@@ -112,7 +112,7 @@
       <div class="display-header">
         <h1 class="section-title">CATALINA ISLAND GEOGRAPHY</h1>
         <div id="map-container">
-          <div id="map"></div>
+          <div id="map" style="width: 600px; height: 500px;"></div>
               <script>
               var myMap = L.map("map", {
                   center: [33.39, -118.42],
@@ -120,6 +120,7 @@
                 });
       
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(myMap);  
       

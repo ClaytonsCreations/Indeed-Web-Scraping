@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  <title>Catalina Jobs</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="title">
+          <a href="#hero">
+            <h1>Catalina Jobs</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="index.html" data-after="Home">Home</a></li>
+            <li><a href="#about" data-after="about">About</a></li>
+            <li><a href="htmlJobTable.html" data-after="job-table">Job Table</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>Indeed Job Query set in Catalina Island, California</h1>
+        <a href="#maps" type="button" class="cta">Click to see more!</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about container">
+      <div class="about-top">
+        <h1 class="section-title">About this Project</h1>
+        <p>This project incorporates job data scraped from Indeed. Using data tools like Python, SQL, HTML/CSS/JavaScript, we are providing visual details about the job market for Catalina Island, California.</p>
+          <div id="myWordCloud">
+          <!-- Our JavaScript file -->
+          <script type="text/javascript" src="D3WordCloud.js"></script>
+          </div>
+      </div>
+      <div class="service-bottom">
+        <div class="service-item">
+          <div class="icon"><img src="https://web.cs.wpi.edu/~imgd2905/d19/projects/proj2/logo.png" /></div>
+          <h2>Step 1</h2>
+          <p>Utilizing Jupyter Notebook and Python, we used Beautiful Soup and requests as tools to web scrape the Indeed website. We used the 'inspect' feature on the browser to get an idea of what information could be scraped based on the common and repeated html tags. We began with building the URL and search parameters using requests to connect to indeed.com. Then used BeautifulSoup to provide a cleaner view of the html and identify which level tag needs to be used to gather the other details. To get each value we created individual code and checked to ensure the data pulled was what we wanted, after making adjustments as needed we then put all the code into a for loop along with a page advancer to gather the entire dataset. We then exported the data into a csv format to use in our database.</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" /></div>
+          <h2>Step 2</h2>
+          <p>We utilized SQL (Postgres4) as our database by creating a table to hold our imported csv data. We then reviewed the data and 'normalized' it so it was easier to understand. Locations that were written differently were updated, removed unnecessary words, and changed salary information to yearly salary. Also added a column for a unique ID incase we ever needed to join an additional table and use a primary key to reference.</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://paginas-web-cr.com/wp-content/uploads/2019/06/html5-css3-js-bootstrap.png"/></div>
+          <h2>Step 3</h2>
+          <p>Now that we had clean data we utilized HTML, JavaScript, CSS, and bootstrap to create a professional looking front-end webpage to hold our data and visualizations.</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://miro.medium.com/max/480/1*YTnIluRNB5WWn-HhPIkoWQ.png"/></div>
+          <h2>Step 4</h2>
+          <p>Our first visualization we wanted to utilize the JavaScript plugin Leaflet to map out the locations of available jobs. As we are only looking at a small geographic areas data, we chose to use the clustergroup marker option that allows a person to see the number of jobs and as they zoom in they separate and become individual markers that show some of the job details when selected. </p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="D3js logo.png"/></div>
+          <h2>Step 5</h2>
+          <p>In order to make all of our data accessible, we utilized a filterable HTML table. In order to create the HTML table we first had to get the data into a JSON format and make it a variable called in our JavaScript. We built the table framework into a new HTML that is tied to our index.html so the data can be viewed online. We then used D3 to grab each value and compile into the HTML table and utilized the CSS file to upgrade its appearance. We then developed a function that allowed the table to be filtered by starting to key a word it will filter among all the columns for the combination of your search value. No need to hit a button or hit enter as it adjusts after each letter is typed and/or deleted from the search.</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://wcs.smartdraw.com/chart/img/basic-bar-graph.png?bn=15100111813"/></div>
+          <h2>Step 6</h2>
+          <p>3rd visualization</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://varchitectthoughts.files.wordpress.com/2016/03/mission_accomplished_baby.jpg?w=450&h=450&crop=1"/></div>
+          <h2>Step 7</h2>
+          <p>Finalizing and making sure all connection function</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+   <!-- Data/ Project Section -->
+   <section id="maps">
+    <div><div class="display">
+      <div class="display-header">
+        <h1 class="section-title">CATALINA ISLAND GEOGRAPHY</h1>
+          <div id="map" style="width: 600px; height: 600px;"></div>
+              </div>
+            <div class="information-container"></div>
+              <h1 class="section-title"> Analysis</h1>
+              <p>Based on the data that we found, there were several cities on Catalina Island that had a high number of job opportunities.
+                The best part of working for the island company is that you're stuck on an amazing island. 
+                The worst part about working there is that you're stuck on the island. ... However, the island is away from all the hustle and bustle of the mainland. 
+                It's relaxed, and most of the stresses of mainland life, don't exist on Catalina.
+              </p>
+              <p><a href="htmlJobTable.html">Return to Job Table!</a></p>
+            </div>
+        </div>  
+        </div>
+    </div>
+  </section>
+  <!-- End Projects Section -->
+  <!-- End Data Section -->
+
+  <!-- Collaborators Section -->
+  <section id="Collaborators">
+    <div id="collaborators">
+      <div id="left">
+        <div class="left-img">
+          <img src="https://onix-systems.com/uploads/pGYiNHHhKM2vYjaxskSgT05kajmIFTsN.jpg" alt="img">
+        </div>
+      </div>
+      <div id="right">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+      <h1>Project 3</h1>
+      <h2>Team Members</h2>
+      <h3>Mark Clayton, Estefany Amado, Jenny Bui</h3>
+      </div>
+  </div>
+  </section>
+  <!-- End Collaborators Section -->
+  
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1>January 2022</h1>
+        <i class="fa fa-github" style="font-size:36px"></i><a href="https://github.com/clytn579/Project-3">Project 3 GitHub Repository</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Footer -->
+  <script src="./app.js"></script>
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+  integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+  crossorigin=""></script>
+  <script>
+  var myMap = L.map('map', {
+    center: [33.39, -118.42],
+    zoom: 11
+  });
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+
+    }).addTo(myMap);  
+
+  var markers = L.markerClusterGroup()
+
+  d3.csv("Data/Indeed_coordinates.csv", function(data) {
+    var lat = data.lat
+    var lng = data.lng
+    markers.addLayer(L.marker([lat, lng]).bindPopup("Job Title: "  + data.jobtitle + "<br>Company: " + data.company));
+
+    myMap.addLayer(markers);
+  
+  });
+
+  </script>
+</body>
+
+</html>

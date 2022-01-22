@@ -7,9 +7,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Indeed Jobs</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
 </head>
 
 <body>
+      <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="title">
+          <a href="#hero">
+            <h1>Catalina Jobs</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="../index.html" data-after="Home">Home</a></li>
+            <li><a href="../index.html" data-after="about">About</a></li>
+            <li><a href="../htmlJobTable.html" data-after="job-table">Job Table</a></li>
+            <li><a href="https://peaceful-crag-48767.herokuapp.com/" data-after="job-posting">Post a Job</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
     <div class="container">
         <div class="jumbotron" style="text-align: center">
             <h1>Job Postings</h1>

@@ -11,10 +11,9 @@ var markers = L.markerClusterGroup()
 
 d3.csv("Indeed_coordinates.csv", function(data) {
   var lat = data.lat
-  var lon = data.lng
-  markers.addLayer(L.marker([lat, lon]).bindPopup("Job Title: "  + data.jobtitle + "<br>Company: " + data.company));
+  var lng = data.lng
+  markers.addLayer(L.marker([lat, lng]).bindPopup("Job Title: "  + data.jobtitle + "<br>Company: " + data.company));
 
   myMap.addLayer(markers);
  
 });
-

@@ -349,18 +349,13 @@ p {
 	border-radius: 10px;
 }
 
-#map-container {
+#map {
     position: relative;
     height: 500px;
     width: 1000px;
 }
 
-#map {
-    position: relative;
-    height: 400px;
-    width: 600px;
-	justify-content: center;
-}
+
 .information-container{
 	display: flex;
 	position: relative;
@@ -374,6 +369,7 @@ p {
 	flex: 0 0 50%;
 	max-width: 100%;
 }
+
 
 /* End Maps section */
 

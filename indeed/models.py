@@ -7,11 +7,11 @@ class Job(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     Title = db.Column(db.String(100))
     Company = db.Column(db.String(100))
-    Location = db.Column(db.String(100))
     Summary = db.Column(db.String(255))
-    Post_Date = db.Column(db.String(50))
-    Extracted_Date = db.Column(db.String(50))
     Salary = db.Column(db.String(50))
+    Lat = db.Column(db.Float)
+    Lon = db.Column(db.Float)
+    
 
     def __repr__(self):
-        return '<Job %r>' % (self.Title)
+        return '<Job %r>' % (self.name)

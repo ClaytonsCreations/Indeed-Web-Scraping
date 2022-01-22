@@ -30,15 +30,14 @@ def home():
 @app.route("/send", methods=["GET", "POST"])
 def send():
     if request.method == "POST":
-        Title = request.form["Title"]
-        Company = request.form["Company"]
-        Location = request.form["Location"]
-        Summary = request.form["Summary"]
-        Post_Date = request.form["Post"]
-        Extracted_Date = request.form["Extracted"]
-        Salary = request.form["Salary"]
+        Title = request.form["jobTitle"]
+        Company = request.form["jobCo"]
+        Summary = request.form["jobSum"]
+        Lat = request.form["jobLat"]
+        Lon = request.form["jobLong"]
+        Salary = request.form["jobSal"]
 
-        job = Job(Title=Title, Company=Company, Location=Location, Summary=Summary, Post_Date=Post_Date, Extracted_Date=Extracted_Date, Salary=Salary)
+        job = Job(Title=Title, Company=Company, Lat=Lat, Lon=Lon, Summary=Summary, Salary=Salary)
         db.session.add(job)
         db.session.commit()
         return redirect("/", code=302)
@@ -47,7 +46,7 @@ def send():
 
 @app.route("/api/jobs")
 def jobs():
-    results = db.session.query(Job.Title, Job.Company, Job.Location, Job.Summary, Job.Salary).all()
+    results = db.session.query(Job.Title, Job.Company, Job.Summary, Job.Lat, Job.Lon, Job.Salary).all()
 
     hover_text = [result[0] for result in results]
     lat = [result[1] for result in results]
@@ -57,7 +56,7 @@ def jobs():
         "type": "scattergeo",
         "locationmode": "USA-states",
         "lat": lat,
-        "lon": lon,
+        "lon": long,
         "text": hover_text,
         "hoverinfo": "text",
         "marker": {

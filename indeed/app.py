@@ -49,8 +49,8 @@ def jobs():
     results = db.session.query(Job.Title, Job.Company, Job.Summary, Job.Lat, Job.Lon, Job.Salary).all()
 
     hover_text = [result[0] for result in results]
-    lat = [result[1] for result in results]
-    lon = [result[2] for result in results]
+    lat = [result[3] for result in results]
+    lon = [result[4] for result in results]
 
     job_data = [{
         "type": "scattergeo",
@@ -60,7 +60,7 @@ def jobs():
         "text": hover_text,
         "hoverinfo": "text",
         "marker": {
-            "size": 15,
+            "size": 25,
             "line": {
                 "color": "rgb(8,8,8)",
                 "width": 1

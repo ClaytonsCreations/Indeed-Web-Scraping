@@ -8,8 +8,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://d3js.org/d3.v3.min.js"></script>
   <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
+
+  
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
   <title>Catalina Jobs</title>
 </head>
 
@@ -108,7 +113,9 @@
     <div><div class="display">
       <div class="display-header">
         <h1 class="section-title">CATALINA ISLAND GEOGRAPHY</h1>
-          <div id="map" style="width: 600px; height: 600px;"></div>
+          <div id="map"></div>
+          <script src="https://d3js.org/d3.v5.min.js"></script>
+          <script type="text/javascript" src="logic.js"></script>
               </div>
             <div class="information-container"></div>
               <h1 class="section-title"> Analysis</h1>
@@ -162,32 +169,7 @@
   </section>
   <!-- End Footer -->
   <script src="./app.js"></script>
-  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-  integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-  crossorigin=""></script>
-  <script>
-  var myMap = L.map('map', {
-    center: [33.39, -118.42],
-    zoom: 11
-  });
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-
-    }).addTo(myMap);  
-
-  var markers = L.markerClusterGroup()
-
-  d3.csv("Data/Indeed_coordinates.csv", function(data) {
-    var lat = data.lat
-    var lng = data.lng
-    markers.addLayer(L.marker([lat, lng]).bindPopup("Job Title: "  + data.jobtitle + "<br>Company: " + data.company));
-
-    myMap.addLayer(markers);
-  
-  });
-
-  </script>
 </body>
 
 </html>

@@ -14,4 +14,4 @@ class Job(db.Model):
     Salary = db.Column(db.String(50))
 
     def __repr__(self):
-        return '<Job %r>' % (self.name)
+        return '<Job %r>' % (self.Title)

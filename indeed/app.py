@@ -5,7 +5,6 @@ from flask import (
     jsonify,
     request,
     redirect)
-from flask_pymongo import PyMongo
 
 
 app = Flask(__name__)

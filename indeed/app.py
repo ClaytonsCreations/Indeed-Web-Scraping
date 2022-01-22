@@ -48,7 +48,7 @@ def send():
 def jobs():
     results = db.session.query(Job.Title, Job.Company, Job.Summary, Job.Lat, Job.Lon, Job.Salary).all()
 
-    hover_text = [(result[0], " ", result[1], " ", result[5])for result in results]
+    hover_text = [(result[0],  result[1],  result[5])for result in results]
     lat = [result[3] for result in results]
     lon = [result[4] for result in results]
 

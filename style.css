@@ -19,6 +19,15 @@ a {
 	font-weight: bold;
 }
 
+.service-item h2{
+	font-size: x-large;
+	font-weight: bold;
+}
+
+.service-item p{
+	font-size: large;
+}
+
 h1 {
 	text-align: center;
 	font-size: large;
@@ -41,6 +50,13 @@ h3 {
 	align-items: center;
 	justify-content: center;
 }
+
+.icon img {
+	height: 250px;
+	width: 250px;
+	object-fit: contain;
+}
+
 img {
 	height: 100%;
 	width: 100%;
@@ -259,14 +275,14 @@ p {
 #about .about {
 	flex-direction: column-reverse;
 	text-align: center;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 100px 20px;
+	/* max-width: 1200px;
+	margin: 0 auto; */
+	padding: 20px 20px;
 }
-#about .col-left {
+/* #about .col-left {
 	width: 250px;
 	height: 360px;
-}
+} */
 #about .col-right {
 	width: 100%;
 }
@@ -276,9 +292,9 @@ p {
 	letter-spacing: 0.2rem;
 	margin-bottom: 10px;
 }
-#about .col-right p {
+/* #about .col-right p {
 	margin-bottom: 20px;
-}
+} */
 #about .col-right .cta {
 	color: black;
 	margin-bottom: 50px;
@@ -288,19 +304,22 @@ p {
 #about .about {
 	flex-direction: row;
 }
-#about .col-left {
+/* #about .col-left {
 	width: 600px;
 	height: 400px;
 	padding-left: 60px;
-}
-#about .col-right {
+} */
+/* #about .col-right {
 	text-align: left;
 	padding: 30px;
-}
+} */
 #about .col-right h1 {
 	text-align: left;
 }
 
+/* #about .about-top {
+	
+} */
 #about .service-bottom .service-item {
 	flex-basis: 45%;
 	margin: 2.5%;
@@ -340,6 +359,7 @@ p {
     position: relative;
     height: 400px;
     width: 600px;
+	justify-content: center;
 }
 .information-container{
 	display: flex;
@@ -560,6 +580,7 @@ margin-top: 50px;
 	#hero h1 {
 		font-size: 7rem;
 	}
+}
 	/* End Hero */
 
 	/* End Section */
@@ -580,14 +601,12 @@ margin-top: 50px;
 	  }
 	  
 	  #left {
-		border: 1px solid lightgray;
 		width: 40%;
 		position: center;
 	  }
 
 	  
 	  #right {
-		border: 1px solid lightgray;
 		width: 60%;
 		position: center;
 	  }
@@ -627,3 +646,6 @@ margin-top: 50px;
 	}
 }
 /* End*/
+
+
+  

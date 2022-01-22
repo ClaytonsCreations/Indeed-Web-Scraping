@@ -4,7 +4,7 @@ function wordCloud(selector) {
 
     //Construct the word cloud's SVG element
     var svg = d3.select(selector).append("svg")
-        .attr("width", 500)
+        .attr("width", 1000)
         .attr("height", 500)
         .append("g")
         .attr("transform", "translate(250,250)");
@@ -45,7 +45,7 @@ function wordCloud(selector) {
 
     return {
         update: function(words) {
-            d3.layout.cloud().size([500, 500])
+            d3.layout.cloud().size([900, 800])
                 .words(words)
                 .padding(5)
                 .rotate(function() { return ~~(Math.random() * 2) * 90; })

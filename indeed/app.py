@@ -45,7 +45,31 @@ def send():
 
     return render_template("form.html")
 
+@app.route("/api/jobs")
+def jobs():
+    results = db.session.query(Job.Title, Job.Company, Job.Location, Job.Summary, Job.Salary).all()
 
+    hover_text = [result[0] for result in results]
+    lat = [result[1] for result in results]
+    lon = [result[2] for result in results]
+
+    job_data = [{
+        "type": "scattergeo",
+        "locationmode": "USA-states",
+        "lat": lat,
+        "lon": lon,
+        "text": hover_text,
+        "hoverinfo": "text",
+        "marker": {
+            "size": 15,
+            "line": {
+                "color": "rgb(8,8,8)",
+                "width": 1
+            },
+        }
+    }]
+
+    return jsonify(job_data)
 
 if __name__ == "__main__":
     app.run(debug=True)

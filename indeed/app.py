@@ -56,7 +56,7 @@ def jobs():
         "type": "scattergeo",
         "locationmode": "USA-states",
         "lat": lat,
-        "lon": long,
+        "lon": lon,
         "text": hover_text,
         "hoverinfo": "text",
         "marker": {

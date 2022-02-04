@@ -24,4 +24,12 @@ We only pulled the data once and job postings would be outdated.
 Catalina Island had a limited number of jobs that we later realized many jobs were duplicates but posted on different days.
 Not much salary data available to compare. 
 
-Project Team
+##Project Team
+###Mark Clayton
+ClaytonsCreations
+
+###Estefany Amado
+Eamado18
+
+###Jenny Bui
+jbui009
